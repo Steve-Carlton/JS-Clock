@@ -59,50 +59,34 @@
       transform: translateY(-3px); /* account for the height of the clock hands */
     }
 
-    .ticmarks .tic {
-      width: 6px;
-      height: 6px;
-      background-color: yellow;
+    .tic {
+      width: 4px;
+      height: 10px;
       position: absolute;
+      background-color: #04001a;
+      border: 2px solid #00f6ff;
+    }
+    #top {
+      top: 0;
       left: 49%;
     }
 
-    #top {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      background-color: red;
-      height: 10px;
-      width: 4px;
-    }
     #right {
-      position: absolute;
       top: 50%;
-      left: 98%;
-      background-color: yellow;
+      left: 99%;
       transform: rotate(90deg);
-      height: 10px;
-      width: 4px;
     }
+
     #bottom {
-      position: absolute;
       top: 98%;
-      left: 50%;
-      background-color: blue;
-      height: 10px;
-      width: 4px;
+      left: 49%;
     }
+
     #left {
-      position: absolute;
       top: 50%;
-      left: 2%;
-      background-color: pink;
+      left: 1%;
       transform: rotate(90deg);
-      height: 10px;
-      width: 4px;
     }
-
-
 
     .hour-hand {
       width: 35%;
@@ -153,35 +137,35 @@
   </style>
 
   <script>
-  // function setDate() {
-  //   const getTime = new Date();
-  //   const seconds = getTime.getSeconds();
-  //   const minutes = getTime.getMinutes();
-  //   let hour24 = getTime.getHours();
-  //   if (hour24 > 12) {
-  //     hour24 -= 12;
-  //   }
-  //   const secondHand = document.querySelector('.second-hand');
-  //   const minHand = document.querySelector('.min-hand');
-  //   const hourHand = document.querySelector('.hour-hand');
-  //
-  //   const secondDegrees = ((seconds / 60) * 360) + 90;
-  //   const minDegrees = ((minutes/ 60) * 360) + 90;
-  //   const hourDegrees = ((hour24 / 12) * 360) + 90;
-  //
-  //   secondHand.style.transform = `rotate(${secondDegrees}deg)`;
-  //   minHand.style.transform = `rotate(${minDegrees}deg)`;
-  //   hourHand.style.transform = `rotate(${hourDegrees}deg)`;
-  //
-  //   //prevents hands from 'rewinding' to 90degrees.
-  //   if (secondDegrees > 444 || secondDegrees == 90) {
-  //     secondHand.style.transition = "none";
-  //   } else {
-  //     secondHand.style.transition = "";
-  //   }
-  // }
-  // //functions can be set to run at a regular timing interval. provide funtion name and time(milliseconds)
-  // setInterval(setDate, 1000);
+  function setDate() {
+    const getTime = new Date();
+    const seconds = getTime.getSeconds();
+    const minutes = getTime.getMinutes();
+    let hour24 = getTime.getHours();
+    if (hour24 > 12) {
+      hour24 -= 12;
+    }
+    const secondHand = document.querySelector('.second-hand');
+    const minHand = document.querySelector('.min-hand');
+    const hourHand = document.querySelector('.hour-hand');
+
+    const secondDegrees = ((seconds / 60) * 360) + 90;
+    const minDegrees = ((minutes/ 60) * 360) + 90;
+    const hourDegrees = ((hour24 / 12) * 360) + 90;
+
+    secondHand.style.transform = `rotate(${secondDegrees}deg)`;
+    minHand.style.transform = `rotate(${minDegrees}deg)`;
+    hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+
+    //prevents hands from 'rewinding' to 90degrees.
+    if (secondDegrees > 444 || secondDegrees == 90) {
+      secondHand.style.transition = "none";
+    } else {
+      secondHand.style.transition = "";
+    }
+  }
+  //functions can be set to run at a regular timing interval. provide funtion name and time(milliseconds)
+  setInterval(setDate, 1000);
 
   </script>
 </body>
