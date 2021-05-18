@@ -1,0 +1,23 @@
+{
+  "name": "js-clock",
+  "version": "1.0.0",
+  "description": "js-clock",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./style.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Steve-Carlton/JS-Clock.git"
+  },
+  "author": "Steve Carlton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Steve-Carlton/JS-Clock/issues"
+  },
+  "homepage": "https://github.com/Steve-Carlton/JS-Clock#readme",
+  "dependencies": {
+    "node-sass": "^6.0.0",
+    "sass": "^1.32.13"
+  }
+}
